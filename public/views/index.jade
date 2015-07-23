@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    title Angular Test
+  body
+    span Search:
+    div(ng-app='video', ng-controller='VideoController')
+      input(ng-model="description")
+      div(ng-repeat="wideo in wideos" ng-show="wideo.snippet.description.indexOf(description) != -1")
+        iframe(width="420", height="315" ng-src="{{wideo.url}}")
+    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js')
+    script(src='controllers/videoController.js')
